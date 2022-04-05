@@ -6,17 +6,8 @@ using Unity.MLAgents;
 using Unity.MLAgents.Actuators;
 
 
-public class NewBehaviourScript : Agent
+public class SingleDebris : Agent
 {
-    // Start is called before the first frame update
-    void Start()
-    {
+    [SerializeField] private GameObject goal;
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 }
