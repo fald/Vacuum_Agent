@@ -29,6 +29,7 @@ public class SingleDebris : Agent
     public override void OnEpisodeBegin()
     // This is called at the beginning of each episode. So when max step counter is achieved.
     {
+        counter = 0;
         goal.SetActive(true); // Reset the goal.
         transform.position = startPosition; // Reset the agent.
         debrisPosition.y = 0.25f; // Reset the debris 
@@ -70,6 +71,17 @@ public class SingleDebris : Agent
 
         // TODO: Have the pill also tilt away...or some other way to make it visually obvious to an
         // outisde observer which way the agent is moving. Also it'd be kinda cute to see it zoomin'
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Goal"))
+        {
+            other.gameObject.SetActive(false);
+            counter += 1;
+            AddReward(1f);
+            EndEpisode();
+        }
     }
 
 }
