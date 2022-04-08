@@ -35,4 +35,15 @@ public class SingleDebris : Agent
         goal.transform.position = debrisPosition + Quaternion.Euler(Vector3.up * Random.Range(0f, 360f)) * Vector3.forward * 5f; // Reset the goal...but in a random location.
     }
 
+    public override void Heuristic(in ActionBuffers actionsOut)
+    {
+        int vertical = Mathf.RoundToInt(Input.GetAxis("Vertical"));
+        int horizontal = Mathf.RoundToInt(Input.GetAxis("Horizontal"));
+
+        ActionSegment<int> actions = actionsOut.DiscreteActions;
+
+        actions[0] = vertical >= 0 ? vertical : 2;
+        actions[1] = horizontal >= 0 ? horizontal : 2;
+    }
+
 }
