@@ -10,7 +10,7 @@ public class SingleDebris : Agent
 {
     [SerializeField] private GameObject goal;
 
-    private int counter = 1;
+    private int counter = 0;
     private float moveSpeed = 3f;
     private float turnSpeed = 380f;
     private Vector3 startPosition;
