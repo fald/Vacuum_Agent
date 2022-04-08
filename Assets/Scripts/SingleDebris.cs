@@ -46,4 +46,30 @@ public class SingleDebris : Agent
         actions[1] = horizontal >= 0 ? horizontal : 2;
     }
 
+    public override void OnActionReceived(ActionBuffers actions)
+    {
+        // First check if the agent has strayed too far away from where it should be searching
+        // If so, add a negative reward, and end the episode.
+        if (Vector3.Distance(startPosition, transform.position) > 25f)
+        {
+            AddReward(-1f);
+            EndEpisode();
+        }
+
+        float vertical = actions.DiscreteActions[0] <= 1 ? actions.DiscreteActions[0] : -1;
+        float horizontal = actions.DiscreteActions[1] <= 1 ? actions.DiscreteActions[1] : -1;
+
+        if (horizontal != 0)
+        {
+            float angle = Mathf.Clamp(horizontal, -1f, 1f) * turnSpeed * Time.fixedDeltaTime;
+            transform.Rotate(Vector3.up, angle);
+        }
+
+        Vector3 movement = transform.forward * Mathf.Clamp(vertical, -1f, 1f) * moveSpeed * Time.fixedDeltaTime;
+        rigidbody.MovePosition(transform.position + movement);
+
+        // TODO: Have the pill also tilt away...or some other way to make it visually obvious to an
+        // outisde observer which way the agent is moving. Also it'd be kinda cute to see it zoomin'
+    }
+
 }
