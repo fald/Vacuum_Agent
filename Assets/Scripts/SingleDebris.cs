@@ -30,6 +30,7 @@ public class SingleDebris : Agent
     // This is called at the beginning of each episode. So when max step counter is achieved.
     {
         counter = 0;
+        transform.rotation = Quaternion.identity;
         goal.SetActive(true); // Reset the goal.
         transform.position = startPosition; // Reset the agent.
         debrisPosition.y = 0.25f; // Reset the debris 
