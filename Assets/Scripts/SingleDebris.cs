@@ -75,7 +75,7 @@ public class SingleDebris : Agent
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Goal"))
+        if (other.gameObject.CompareTag("goal"))
         {
             other.gameObject.SetActive(false);
             counter += 1;
