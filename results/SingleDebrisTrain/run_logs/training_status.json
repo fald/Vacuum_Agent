@@ -1,0 +1,29 @@
+{
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.28.0",
+        "torch_version": "1.8.0"
+    },
+    "Single Debris": {
+        "checkpoints": [
+            {
+                "steps": 0,
+                "file_path": "results\\SingleDebrisTrain\\Single Debris\\Single Debris-0.onnx",
+                "reward": null,
+                "creation_time": 1649465944.4999611,
+                "auxillary_file_paths": [
+                    "results\\SingleDebrisTrain\\Single Debris\\Single Debris-0.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 0,
+            "file_path": "results\\SingleDebrisTrain\\Single Debris.onnx",
+            "reward": null,
+            "creation_time": 1649465944.4999611,
+            "auxillary_file_paths": [
+                "results\\SingleDebrisTrain\\Single Debris\\Single Debris-0.pt"
+            ]
+        }
+    }
+}

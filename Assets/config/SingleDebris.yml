@@ -1,5 +1,5 @@
 behaviors:
-  SingleDebris:
+  Single Debris:
     trainer_type: ppo
     hyperparameters:
       batch_size: 128

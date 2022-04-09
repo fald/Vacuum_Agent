@@ -1,0 +1,49 @@
+{
+    "name": "root",
+    "metadata": {
+        "timer_format_version": "0.1.0",
+        "start_time_seconds": "1649465934",
+        "python_version": "3.8.13 (default, Mar 28 2022, 06:59:08) [MSC v.1916 64 bit (AMD64)]",
+        "command_line_arguments": "C:\\Python36\\Anaconda3\\envs\\ml-agent-game\\Scripts\\mlagents-learn .\\Assets\\config\\SingleDebris.yml --run-id=SingleDebrisTrain --resume",
+        "mlagents_version": "0.28.0",
+        "mlagents_envs_version": "0.28.0",
+        "communication_protocol_version": "1.5.0",
+        "pytorch_version": "1.8.0",
+        "numpy_version": "1.21.5",
+        "end_time_seconds": "1649465944"
+    },
+    "total": 9.6238894,
+    "count": 1,
+    "self": 0.01383949999999956,
+    "children": {
+        "run_training.setup": {
+            "total": 0.1179965999999999,
+            "count": 1,
+            "self": 0.1179965999999999
+        },
+        "TrainerController.start_learning": {
+            "total": 9.4920533,
+            "count": 1,
+            "self": 0.00017420000000001323,
+            "children": {
+                "TrainerController._reset_env": {
+                    "total": 9.1798233,
+                    "count": 1,
+                    "self": 9.1798233
+                },
+                "TrainerController._save_models": {
+                    "total": 0.31205579999999955,
+                    "count": 1,
+                    "self": 0.0099298000000001,
+                    "children": {
+                        "RLTrainer._checkpoint": {
+                            "total": 0.30212599999999945,
+                            "count": 1,
+                            "self": 0.30212599999999945
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
