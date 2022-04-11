@@ -854,5 +854,55 @@ PrefabInstance:
       propertyPath: m_Name
       value: Arena
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 3989413521052496374, guid: 9938c1bb7ccbbe84b9ac47a933ea39cf, type: 3}
+      propertyPath: m_Model
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3989413521052496374, guid: 9938c1bb7ccbbe84b9ac47a933ea39cf, type: 3}
+      propertyPath: m_BehaviorName
+      value: Multiple Debris
+      objectReference: {fileID: 0}
+    - target: {fileID: 3989413521052496374, guid: 9938c1bb7ccbbe84b9ac47a933ea39cf, type: 3}
+      propertyPath: m_BehaviorType
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 3989413521052496372, guid: 9938c1bb7ccbbe84b9ac47a933ea39cf, type: 3}
+    - {fileID: 3989413521052496375, guid: 9938c1bb7ccbbe84b9ac47a933ea39cf, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9938c1bb7ccbbe84b9ac47a933ea39cf, type: 3}
+--- !u!1 &3989413520107632394 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3989413521052496369, guid: 9938c1bb7ccbbe84b9ac47a933ea39cf, type: 3}
+  m_PrefabInstance: {fileID: 3989413520107632393}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3989413520107632395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3989413520107632394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a5c9d521e5ef4759a8246a07d52221e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DecisionPeriod: 5
+  TakeActionsBetweenDecisions: 1
+--- !u!114 &3989413520107632396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3989413520107632394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4eb3116bf6178ce4e87302a282f524fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agentParameters:
+    maxStep: 0
+  hasUpgradedFromAgentParameters: 1
+  MaxStep: 0
+  goal: {fileID: 0}
