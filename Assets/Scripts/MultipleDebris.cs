@@ -8,8 +8,9 @@ using Unity.MLAgents.Actuators;
 
 public class MultipleDebris : Agent
 {
-    [SerializeField] private GameObject goal;
+    [SerializeField] private GameObject[] goals;
 
+    [SerializeField] private int numGoals = 3;
     private int counter = 0;
     private float moveSpeed = 3f;
     private float turnSpeed = 380f;
@@ -21,6 +22,7 @@ public class MultipleDebris : Agent
     public override void Initialize()
     // This gets called once at the beginning.
     {
+        goals = new GameObject[numGoals];
         debrisPosition = transform.position; // Sneaky later things.
         startPosition = transform.position;
         rigidbody = GetComponent<Rigidbody>();
@@ -31,10 +33,17 @@ public class MultipleDebris : Agent
     {
         counter = 0;
         transform.rotation = Quaternion.identity;
-        goal.SetActive(true); // Reset the goal.
         transform.position = startPosition; // Reset the agent.
         debrisPosition.y = 0.25f; // Reset the debris 
-        goal.transform.position = debrisPosition + Quaternion.Euler(Vector3.up * Random.Range(0f, 360f)) * Vector3.forward * 5f; // Reset the goal...but in a random location.
+
+        for (int i = 0; i < numGoals; i++)
+        {
+            goals[i].SetActive(true); // Reset the goal.
+            goals[i].transform.position =
+                debrisPosition
+                + Quaternion.Euler(Vector3.up * Random.Range(0f, 360f))
+                * Vector3.forward * Random.Range(5f, 15f); // Reset the goal...but in a random location.
+        }
     }
 
     public override void Heuristic(in ActionBuffers actionsOut)
