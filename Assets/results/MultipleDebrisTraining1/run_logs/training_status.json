@@ -1,0 +1,29 @@
+{
+    "Multiple Debris": {
+        "checkpoints": [
+            {
+                "steps": 300074,
+                "file_path": "results\\MultipleDebrisTraining1\\Multiple Debris\\Multiple Debris-300074.onnx",
+                "reward": 2.8333333333333335,
+                "creation_time": 1649702578.2378862,
+                "auxillary_file_paths": [
+                    "results\\MultipleDebrisTraining1\\Multiple Debris\\Multiple Debris-300074.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 300074,
+            "file_path": "results\\MultipleDebrisTraining1\\Multiple Debris.onnx",
+            "reward": 2.8333333333333335,
+            "creation_time": 1649702578.2378862,
+            "auxillary_file_paths": [
+                "results\\MultipleDebrisTraining1\\Multiple Debris\\Multiple Debris-300074.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.28.0",
+        "torch_version": "1.8.0"
+    }
+}
