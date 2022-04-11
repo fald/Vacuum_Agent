@@ -90,7 +90,10 @@ public class MultipleDebris : Agent
             other.gameObject.SetActive(false);
             counter += 1;
             AddReward(1f);
-            EndEpisode();
+            if (counter >= numGoals)
+            {
+                EndEpisode();
+            }
         }
     }
 
