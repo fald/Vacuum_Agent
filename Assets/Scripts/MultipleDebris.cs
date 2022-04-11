@@ -9,8 +9,6 @@ using Unity.MLAgents.Actuators;
 public class MultipleDebris : Agent
 {
     [SerializeField] private GameObject[] goals;
-
-    [SerializeField] private int numGoals = 3;
     private int counter = 0;
     private float moveSpeed = 3f;
     private float turnSpeed = 380f;
@@ -22,7 +20,11 @@ public class MultipleDebris : Agent
     public override void Initialize()
     // This gets called once at the beginning.
     {
-        goals = new GameObject[numGoals];
+        goals = new GameObject[transform.parent.Find("DebrisList").childCount];
+        for (int i = 0; i < goals.Length; i++)
+        {
+            goals[i] = transform.parent.Find("DebrisList").GetChild(i).gameObject;
+        }
         debrisPosition = transform.position; // Sneaky later things.
         startPosition = transform.position;
         rigidbody = GetComponent<Rigidbody>();
@@ -36,7 +38,7 @@ public class MultipleDebris : Agent
         transform.position = startPosition; // Reset the agent.
         debrisPosition.y = 0.25f; // Reset the debris 
 
-        for (int i = 0; i < numGoals; i++)
+        for (int i = 0; i < goals.Length; i++)
         {
             goals[i].SetActive(true); // Reset the goal.
             goals[i].transform.position =
@@ -90,7 +92,7 @@ public class MultipleDebris : Agent
             other.gameObject.SetActive(false);
             counter += 1;
             AddReward(1f);
-            if (counter >= numGoals)
+            if (counter >= goals.Length)
             {
                 EndEpisode();
             }
