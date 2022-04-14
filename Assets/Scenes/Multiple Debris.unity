@@ -1029,6 +1029,10 @@ PrefabInstance:
       propertyPath: m_BehaviorType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7085816362895295835, guid: 4a4d01dca4d07f64b807eb43e16e3307, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7085816364479438146, guid: 4a4d01dca4d07f64b807eb43e16e3307, type: 3}
       propertyPath: m_Name
       value: Arena Multi

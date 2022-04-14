@@ -85,7 +85,13 @@ public class MultipleDebris : Agent
         // outisde observer which way the agent is moving. Also it'd be kinda cute to see it zoomin'
         if (vertical > 0)
         {
-            transform.Rotate(Vector3.right, -15f);
+            transform.GetChild(0).localRotation = Quaternion.Euler(-30f, 0f, 0f);
+        } else if (vertical < 0)
+        {
+            transform.GetChild(0).localRotation = Quaternion.Euler(30f, 0f, 0f);
+        } else 
+        {
+            transform.GetChild(0).localRotation = Quaternion.Euler(0f, 0f, 0f);
         }
     }
 
