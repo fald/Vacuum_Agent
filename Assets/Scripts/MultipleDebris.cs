@@ -83,6 +83,10 @@ public class MultipleDebris : Agent
 
         // TODO: Have the pill also tilt away...or some other way to make it visually obvious to an
         // outisde observer which way the agent is moving. Also it'd be kinda cute to see it zoomin'
+        if (vertical > 0)
+        {
+            transform.Rotate(Vector3.right, -15f);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
